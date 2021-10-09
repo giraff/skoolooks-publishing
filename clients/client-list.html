@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>판매 대상 목록</title>
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: [
+            "Open Sans",
+            "Noto Sans KR",
+            "Open Sans Condensed",
+            "Oswald",
+          ],
+        },
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+    />
+    <link rel="stylesheet" href="../App-black.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <aside class="sidebar-wrapper" id="sidebar">
+        <div class="sidebar-content">
+          <div class="sidebar-header">
+            <div class="logo orange">
+              <a href="/">
+                <img src="/LOGO.png" alt="스쿨룩스 재고관리 로고" />
+              </a>
+            </div>
+          </div>
+          <div class="sidebar-profile">
+            <div class="user-info" tabindex="0">
+              <span class="user-prefix">환영합니다!&nbsp;</span>
+              <span class="user-name">황현정&nbsp;</span>
+              <span class="user-postfix">님</span>
+            </div>
+          </div>
+
+          <div class="sidebar-menu">
+            <ul class="categories">
+              <li class="sidebar-nav">
+                <div class="menu-label">
+                  <i class="fas fa-chart-pie"></i>
+                  <a href="../index.html" class="btn-nav btn-nav-dashboard">
+                    대시보드
+                  </a>
+                </div>
+              </li>
+              <li class="sidebar-nav has-dropdown">
+                <div class="menu-label opened">
+                  <i class="fas fa-archive"> </i>
+                  <a href="#" class="btn-nav btn-nav-product"> 제품관리 </a>
+                </div>
+                <ul class="sidebar-submenu sub-open">
+                  <li class="">
+                    <a href="../product/produect-list.html">제품 목록</a>
+                  </li>
+                  <li class="">
+                    <a href="../product/product-register.html">제품 등록</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-nav has-dropdown">
+                <div class="menu-label">
+                  <i class="fas fa-cart-arrow-down"></i>
+                  <a href="#" class="btn-nav btn-nav-incoming">입고</a>
+                </div>
+                <ul class="sidebar-submenu sub-hidden">
+                  <li class=""><a href="../incoming/incoming.html">입고</a></li>
+                  <li class="">
+                    <a href="../incoming/incoming-history.html">입고 내역</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-nav has-dropdown">
+                <div class="menu-label">
+                  <i class="fas fa-dollar-sign"></i>
+                  <a href="#" class="btn-nav btn-nav-sale"> 판매 </a>
+                </div>
+                <ul class="sidebar-submenu sub-hidden">
+                  <li class=""><a href="../outcoming/sale.html">판매</a></li>
+                  <li class="">
+                    <a href="../outcoming/sale-history.html">판매 내역</a>
+                  </li>
+                  <li class="">
+                    <a href="../outcoming/history-calendar.html">판매 현황</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-nav">
+                <div class="menu-label">
+                  <i class="fas fa-user-tie"></i>
+                  <a
+                    href="../member/member.html"
+                    class="btn-nav btn-nav-employee"
+                  >
+                    멤버 관리
+                  </a>
+                </div>
+              </li>
+              <li class="sidebar-nav has-dropdown">
+                <div class="menu-label">
+                  <i class="fas fa-users"></i>
+                  <a href="#" class="btn-nav btn-nav-client">
+                    판매 대상 관리
+                  </a>
+                </div>
+                <ul class="sidebar-submenu sub-hidden">
+                  <li class="clicked"><a href="#">판매 대상 목록</a></li>
+                  <li class="">
+                    <a href="./client-register.html">판매 대상 추가</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sidebar-footer"></div>
+      </aside>
+      <section id="section-container">
+        <div class="page-header">
+          <h1 class="page-title">판매 대상 목록</h1>
+          <div class="page-description">
+            매장을 이용하신 고객분들의 정보를 조회하고 관리합니다
+          </div>
+        </div>
+
+        <div class="contents content-clients-list">
+          <div class="clients-list-label">판매 대상 필터</div>
+          <div class="clients-list-filter">
+            <div class="form-group clients-school-status">
+              <div class="all-status">전체</div>
+              <div class="middleschool-status">중학교</div>
+              <div class="highschool-status">고등학교</div>
+            </div>
+            <div class="form-group group-buying-status">
+              <button type="text">공동 구매 여부</button>
+            </div>
+            <div class="form-group group-buying-client">
+              <button type="text">공동 구매 대상</button>
+            </div>
+            <div class="form-group info-search">
+              <input
+                type="text"
+                class="clients-info-search"
+                value="판매 대상 학교/ 판매 대상 이름 / 판매 대상 연락처"
+              />
+            </div>
+            <div class="form-group client-search-init">
+              <div class="search-init">초기화</div>
+            </div>
+          </div>
+          <div class="clients-grid-wrapper">
+            <div class="clients-grid">판매 대상을 검색해주세요</div>
+            <div class="clients-grid-footer">
+              <button class="btn-load-clients">불러오기</button>
+              <button class="btn-register-clients">등록</button>
+              <button class="btn-delete-clients">삭제</button>
+            </div>
+          </div>
+          <div class="clients-detail-wrapper">
+            <div class="client-detail-label">판매 대상 상세 내역</div>
+            <div class="client-detail-grid">
+              <li>
+                <div>백석 고등학교 / 오징어/ 010-8888-8888/여</div>
+              </li>
+              <li>
+                <div>공동 구매 대상 : ㅇ</div>
+                <div>공동 구매 여부 : ㅇ</div>
+              </li>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

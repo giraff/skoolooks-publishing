@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>판매 대상 등록</title>
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: [
+            "Open Sans",
+            "Noto Sans KR",
+            "Open Sans Condensed",
+            "Oswald",
+          ],
+        },
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+    />
+    <link rel="stylesheet" href="../App-black.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <aside class="sidebar-wrapper" id="sidebar">
+        <div class="sidebar-content">
+          <div class="sidebar-header">
+            <div class="logo orange">
+              <a href="/">
+                <img src="/LOGO.png" alt="스쿨룩스 재고관리 로고" />
+              </a>
+            </div>
+          </div>
+          <div class="sidebar-profile">
+            <div class="user-info" tabindex="0">
+              <span class="user-prefix">환영합니다!&nbsp;</span>
+              <span class="user-name">황현정&nbsp;</span>
+              <span class="user-postfix">님</span>
+            </div>
+          </div>
+
+          <div class="sidebar-menu">
+            <ul class="categories">
+              <li class="sidebar-nav">
+                <div class="menu-label">
+                  <i class="fas fa-chart-pie"></i>
+                  <a href="../index.html" class="btn-nav btn-nav-dashboard">
+                    대시보드
+                  </a>
+                </div>
+              </li>
+              <li class="sidebar-nav has-dropdown">
+                <div class="menu-label opened">
+                  <i class="fas fa-archive"> </i>
+                  <a href="#" class="btn-nav btn-nav-product"> 제품관리 </a>
+                </div>
+                <ul class="sidebar-submenu sub-open">
+                  <li class="">
+                    <a href="../product/produect-list.html">제품 목록</a>
+                  </li>
+                  <li class="">
+                    <a href="../product/product-register.html">제품 등록</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-nav has-dropdown">
+                <div class="menu-label">
+                  <i class="fas fa-cart-arrow-down"></i>
+                  <a href="#" class="btn-nav btn-nav-incoming">입고</a>
+                </div>
+                <ul class="sidebar-submenu sub-hidden">
+                  <li class=""><a href="../incoming/incoming.html">입고</a></li>
+                  <li class="">
+                    <a href="../incoming/incoming-history.html">입고 내역</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-nav has-dropdown">
+                <div class="menu-label">
+                  <i class="fas fa-dollar-sign"></i>
+                  <a href="#" class="btn-nav btn-nav-sale"> 판매 </a>
+                </div>
+                <ul class="sidebar-submenu sub-hidden">
+                  <li class=""><a href="../outcoming/sale.html">판매</a></li>
+                  <li class="">
+                    <a href="../outcoming/sale-history.html">판매 내역</a>
+                  </li>
+                  <li class="">
+                    <a href="../outcoming/history-calendar.html">판매 현황</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-nav">
+                <div class="menu-label">
+                  <i class="fas fa-user-tie"></i>
+                  <a
+                    href="../member/member.html"
+                    class="btn-nav btn-nav-employee"
+                  >
+                    멤버 관리
+                  </a>
+                </div>
+              </li>
+              <li class="sidebar-nav has-dropdown">
+                <div class="menu-label">
+                  <i class="fas fa-users"></i>
+                  <a href="#" class="btn-nav btn-nav-client">
+                    판매 대상 관리
+                  </a>
+                </div>
+                <ul class="sidebar-submenu sub-hidden">
+                  <li class="">
+                    <a href="./client-list.html">판매 대상 목록</a>
+                  </li>
+                  <li class="clicked"><a href="#">판매 대상 추가</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sidebar-footer"></div>
+      </aside>
+      <section id="section-container">
+        <div class="page-header">
+          <h1 class="page-title">판매 대상 추가</h1>
+          <div class="page-description">
+            매장을 이용하신 고객님의 정보를 등록합니다.
+          </div>
+        </div>
+
+        <div class="contents content-client-register">
+          <div class="client-register-form">
+            <div class="client-register-header">
+              <div class="client-register-label">판매 대상 정보</div>
+              <div class="register-form-init">
+                <button type="button" class="init-label">초기화</button>
+              </div>
+            </div>
+            <div class="client-register-wrapper">
+              <li class="client-register-li">
+                <div class="client-register-item-label">이름</div>
+                <div class="client-register-item-input">
+                  <input type="text" />
+                </div>
+              </li>
+              <li class="client-register-li">
+                <div class="client-register-item-label">성별</div>
+                <div class="client-register-item-input">
+                  <input type="text" />
+                </div>
+              </li>
+              <li class="client-register-li">
+                <div class="client-register-item-label">연락처</div>
+                <div class="client-register-item-input">
+                  <input type="text" />
+                </div>
+              </li>
+              <li class="client-register-li">
+                <div class="client-register-item-label">학교명</div>
+                <div class="client-register-item-input">
+                  <input type="text" />
+                </div>
+              </li>
+              <li class="client-register-li">
+                <div class="client-register-item-label">학교 구분</div>
+                <div class="client-register-item-input">
+                  <input type="text" />
+                </div>
+              </li>
+              <li class="client-register-li">
+                <div class="client-register-item-label">공동 구매 대상</div>
+                <div class="client-register-item-input">
+                  <input type="text" />
+                </div>
+              </li>
+            </div>
+            <div class="client-register-footer">
+              <button class="btn-client-register">추가</button>
+            </div>
+          </div>
+          <div class="clients-list">
+            <div class="clients-list-label">판매 대상 리스트</div>
+            <div class="clients-list-wrapper">grid 라이브러리</div>
+            <div class="total-clients">판매 대상자 2</div>
+            <div class="clients-list-footer">
+              <button class="btn-remove-clients">삭제</button>
+              <button class="btn-register-client">등록</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+<!-- p.102 -->

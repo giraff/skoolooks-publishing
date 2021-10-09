@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: [
+            "Open Sans",
+            "Noto Sans KR",
+            "Open Sans Condensed",
+            "Oswald",
+          ],
+        },
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+    />
+    <link rel="stylesheet" href="./App-black.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <aside class="sidebar-wrapper" id="sidebar">
+        <div class="sidebar-content">
+          <div class="sidebar-header">
+            <div class="logo orange">
+              <a href="/">
+                <img src="/LOGO.png" alt="스쿨룩스 재고관리 로고" />
+              </a>
+            </div>
+          </div>
+          <div class="sidebar-profile">
+            <div class="user-info" tabindex="0">
+              <span class="user-prefix">환영합니다!&nbsp;</span>
+              <span class="user-name">황현정&nbsp;</span>
+              <span class="user-postfix">님</span>
+            </div>
+          </div>
+
+          <div class="sidebar-menu">
+            <ul class="categories">
+              <li class="sidebar-nav">
+                <div class="menu-label clicked">
+                  <i class="fas fa-chart-pie"></i>
+                  <a href="#" class="btn-nav btn-nav-dashboard"> 대시보드 </a>
+                </div>
+              </li>
+              <li class="sidebar-nav has-dropdown">
+                <div class="menu-label opened">
+                  <i class="fas fa-archive"> </i>
+                  <a href="#" class="btn-nav btn-nav-product"> 제품관리 </a>
+                </div>
+                <ul class="sidebar-submenu sub-open">
+                  <li><a href="./product/produect-list.html">제품 목록</a></li>
+                  <li>
+                    <a href="./product/product-register.html">제품 등록</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-nav has-dropdown">
+                <div class="menu-label">
+                  <i class="fas fa-cart-arrow-down"></i>
+                  <a href="#" class="btn-nav btn-nav-incoming">입고</a>
+                </div>
+                <ul class="sidebar-submenu sub-hidden">
+                  <li><a href="./incoming/incoming.html">입고</a></li>
+                  <li>
+                    <a href="./incoming/incoming-history.html">입고 내역</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-nav has-dropdown">
+                <div class="menu-label">
+                  <i class="fas fa-dollar-sign"></i>
+                  <a href="#" class="btn-nav btn-nav-sale"> 판매 </a>
+                </div>
+                <ul class="sidebar-submenu sub-hidden">
+                  <li><a href="./outcoming/sale.html">판매</a></li>
+                  <li><a href="./outcoming/sale-history.html">판매 내역</a></li>
+                  <li>
+                    <a href="./outcoming/history-calendar.html">판매 현황</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-nav">
+                <div class="menu-label">
+                  <i class="fas fa-user-tie"></i>
+                  <a
+                    href="./member/member.html"
+                    class="btn-nav btn-nav-employee"
+                  >
+                    멤버 관리
+                  </a>
+                </div>
+              </li>
+              <li class="sidebar-nav has-dropdown">
+                <div class="menu-label">
+                  <i class="fas fa-users"></i>
+                  <a href="#" class="btn-nav btn-nav-client">
+                    판매 대상 관리
+                  </a>
+                </div>
+                <ul class="sidebar-submenu sub-hidden">
+                  <li>
+                    <a href="./clients/client-list.html">판매 대상 목록</a>
+                  </li>
+                  <li>
+                    <a href="./clients/client-register.html">판매 대상 추가</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sidebar-footer"></div>
+      </aside>
+      <section id="section-container">
+        <div class="page-header">
+          <h1 class="page-title">대시보드</h1>
+          <div class="page-description">
+            여러 데이터들을 동시에 비교할 수 있게 해주는 여러 뷰의 모음입니다.
+          </div>
+        </div>
+
+        <div class="contents content-dashboard">
+          <div class="today-chart">
+            <div class="chart chart1">Chart1</div>
+            <div class="chart chart2">Chart2</div>
+          </div>
+          <div class="date">
+            <input type="date" />
+          </div>
+          <div class="chart month-chart">chart3</div>
+          <div class="chart-group">
+            <div class="sub-chart exchange">chart4</div>
+            <div class="sub-chart refund">chart5</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

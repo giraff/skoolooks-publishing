@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>판매</title>
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: [
+            "Open Sans",
+            "Noto Sans KR",
+            "Open Sans Condensed",
+            "Oswald",
+          ],
+        },
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+    />
+    <link rel="stylesheet" href="../App-black.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <aside class="sidebar-wrapper" id="sidebar">
+        <div class="sidebar-content">
+          <div class="sidebar-header">
+            <div class="logo orange">
+              <a href="/">
+                <img src="/LOGO.png" alt="스쿨룩스 재고관리 로고" />
+              </a>
+            </div>
+          </div>
+          <div class="sidebar-profile">
+            <div class="user-info" tabindex="0">
+              <span class="user-prefix">환영합니다!&nbsp;</span>
+              <span class="user-name">황현정&nbsp;</span>
+              <span class="user-postfix">님</span>
+            </div>
+          </div>
+
+          <div class="sidebar-menu">
+            <ul class="categories">
+              <li class="sidebar-nav">
+                <div class="menu-label">
+                  <i class="fas fa-chart-pie"></i>
+                  <a href="../index.html" class="btn-nav btn-nav-dashboard">
+                    대시보드
+                  </a>
+                </div>
+              </li>
+              <li class="sidebar-nav has-dropdown">
+                <div class="menu-label opened">
+                  <i class="fas fa-archive"> </i>
+                  <a href="#" class="btn-nav btn-nav-product"> 제품관리 </a>
+                </div>
+                <ul class="sidebar-submenu sub-open">
+                  <li class="">
+                    <a href="../product/produect-list.html">제품 목록</a>
+                  </li>
+                  <li class="">
+                    <a href="../product/product-register.html">제품 등록</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-nav has-dropdown">
+                <div class="menu-label">
+                  <i class="fas fa-cart-arrow-down"></i>
+                  <a href="#" class="btn-nav btn-nav-incoming">입고</a>
+                </div>
+                <ul class="sidebar-submenu sub-hidden">
+                  <li class=""><a href="../incoming/incoming.html">입고</a></li>
+                  <li class="">
+                    <a href="../incoming/incoming-history.html">입고 내역</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-nav has-dropdown">
+                <div class="menu-label">
+                  <i class="fas fa-dollar-sign"></i>
+                  <a href="#" class="btn-nav btn-nav-sale"> 판매 </a>
+                </div>
+                <ul class="sidebar-submenu sub-hidden">
+                  <li class="clicked"><a href="#">판매</a></li>
+                  <li class=""><a href="./sale-history.html">판매 내역</a></li>
+                  <li class="">
+                    <a href="./history-calendar.html">판매 현황</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-nav">
+                <div class="menu-label">
+                  <i class="fas fa-user-tie"></i>
+                  <a
+                    href="../member/member.html"
+                    class="btn-nav btn-nav-employee"
+                  >
+                    멤버 관리
+                  </a>
+                </div>
+              </li>
+              <li class="sidebar-nav has-dropdown">
+                <div class="menu-label">
+                  <i class="fas fa-users"></i>
+                  <a href="#" class="btn-nav btn-nav-client">
+                    판매 대상 관리
+                  </a>
+                </div>
+                <ul class="sidebar-submenu sub-hidden">
+                  <li class="">
+                    <a href="../clients/client-list.html">판매 대상 목록</a>
+                  </li>
+                  <li class="">
+                    <a href="../clients/client-register.html">판매 대상 추가</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sidebar-footer"></div>
+      </aside>
+      <section id="section-container">
+        <div class="page-header">
+          <h1 class="page-title">판매</h1>
+          <div class="page-description">
+            제품 목록에서 품목을 선택하고 해당 품목을 판매합니다.
+          </div>
+        </div>
+
+        <div class="contents content-outcoming">
+          <div class="outcoming-left">
+            <div class="client-info-wrap">
+              <div class="client-info-label">구매자 정보</div>
+              <div class="client-info-form">
+                <li>
+                  <div class="client-id-label">판매 대상</div>
+                  <div class="client-id-input">
+                    <input type="text" value='서충식' />
+                  </div>
+                </li>
+                <li>
+                  <div class="client-relation-label">판매 대상과의 관계</div>
+                  <div class="client-relation-input">
+                    <input
+                      type="radio"
+                      id="self"
+                      name="self"
+                      value="self"
+                      checked
+                    />
+                    <label for="self">본인</label>
+                    <input
+                      type="radio"
+                      id="father"
+                      name="father"
+                      value="father"
+                    />
+                    <label for="father">부</label>
+                    <input
+                      type="radio"
+                      id="mother"
+                      name="mother"
+                      value="mother"
+                    />
+                    <label for="mother">모</label>
+                    <input type="radio" id="other" name="other" value="other" />
+                    <label for="other">기타</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="client-name-label">구매자 이름</div>
+                  <div class="client-name-input">
+                    <input type="text" value='서충식'/>
+                  </div>
+                </li>
+                <li>
+                  <div class="client-phone-label">구매자 전화번호</div>
+                  <div class="client-phone-input">
+                    <input type="text" value='010-1234-1234'/>
+                  </div>
+                </li>
+                <li>
+                  <div class="client-payment-label">결제 수단</div>
+                  <div class="client-payment-input">
+                    <input
+                      type="radio"
+                      id="card"
+                      name="card"
+                      value="card"
+                      
+                    />
+                    <label for="card">카드</label>
+                    <input type="radio" id="cash" name="cash" value="cash" checked/>
+                    <label for="cash">현금</label>
+                    <input
+                      type="radio"
+                      id="remittance"
+                      name="remittance"
+                      value="remittance"
+                    />
+                    <label for="remittance">송금</label>
+                    <input
+                      type="radio"
+                      id="card-and-cash"
+                      name="card-and-cash"
+                      value="card-and-cash"
+                    />
+                    <label for="card-and-cash">카드+현금</label>
+                    <input
+                      type="radio"
+                      id="card-and-remittance"
+                      name="card-and-remittance"
+                      value="card-and-remittance"
+                    />
+                    <label for="card-and-remittance">카드+송금</label>
+                  </div>
+                </li>
+              </div>
+              <div class="client-info-footer">
+                <button class="btn-init-info">입력 초기화</button>
+                <button class="btn-apply-info">적용</button>
+              </div>
+            </div>
+            <div class="product-info-wrap">
+              <div class="product-info-label">제품 정보</div>
+              <div class="product-info-form">
+                <li>
+                  <div class="info-school-label">학교 구분</div>
+                  <div class="info-school-input">
+                    <input
+                      type="radio"
+                      id="highschool"
+                      name="highschool"
+                      value="highschool"
+                    />
+                    <label for="highschool">고등학교</label>
+                    <input
+                      type="radio"
+                      id="middleschool"
+                      name="middleschool"
+                      value="middleschool"
+                    />
+                    <label for="middleschool">중학교</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="info-school-name-label">학교명</div>
+                  <div class="info-school-name-input">
+                    <input type="text" value="-" />
+                  </div>
+                </li>
+                <li>
+                  <div class="info-season-label">절기 구분</div>
+                  <div class="info-season-input">
+                    <input
+                      type="radio"
+                      id="summer-season"
+                      name="summer-season"
+                      value="summer-season"
+                    />
+                    <label for="summer-season">하계</label>
+                    <input
+                      type="radio"
+                      id="winter-season"
+                      name="winter-season"
+                      value="winter-season"
+                    />
+                    <label for="winter-season">동계</label>
+                    <input
+                      type="radio"
+                      id="no-season"
+                      name="no-season"
+                      value="no-season"
+                    />
+                    <label for="no-season">소품</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="info-sex-label">성별</div>
+                  <div class="info-sex-input">
+                    <input
+                      type="radio"
+                      id="female"
+                      name="female"
+                      value="female"
+                    />
+                    <label for="female">여성</label>
+                    <input type="radio" id="male" name="male" value="male" />
+                    <label for="male">남성</label>
+                    <input
+                      type="radio"
+                      id="unisex"
+                      name="unisex"
+                      value="unisex"
+                    />
+                    <label for="unisex">공용</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="info-category-label">종류</div>
+                  <div class="info-category-input">
+                    <input type="text" value="-" />
+                  </div>
+                </li>
+                <li>
+                  <div class="info-status-label">신상 여부</div>
+                  <div class="info-status-input">
+                    <input type="radio" id="new" name="new" value="new" />
+                    <label for="new">신상</label>
+                    <input
+                      type="radio"
+                      id="carry-over"
+                      name="carry-over"
+                      value="carry-over"
+                    />
+                    <label for="carry-over">이월</label>
+                    <input
+                      type="radio"
+                      id="transfer"
+                      name="transfer"
+                      value="transfer"
+                    />
+                    <label for="transfer">전이</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="info-size-label">사이즈</div>
+                  <div class="info-size-input">
+                    <input type="text" value="-" />
+                  </div>
+                </li>
+                <li>
+                  <div class="info-remain-label">남은 재고</div>
+                  <div class="info-remain-input">
+                    <input type="text" value="0" readonly/>
+                    <button type="button" class="btn-remain-check">
+                      재고 확인
+                    </button>
+                  </div>
+                </li>
+                <li>
+                  <div class="info-count-label">수량</div>
+                  <div class="info-count-input">
+                    <input type="text" value="0" />
+                  </div>
+                </li>
+              </div>
+              <div class="product-info-footer">
+                <div class="outcoming-price">
+                  <div class="outcoming-price-label">가격</div>
+                  <input type="text" class="outcoming-price-view" value="0" />
+                </div>
+                <div class="product-info-buttons">
+                  <button class="btn-init-info">입력 초기화</button>
+                  <button class="btn-apply-info">추가</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="outcoming-right">
+            <div class="outcoming-basket-header">
+              <div class="personal-info">서충식/본인/010-1234-1234/현금</div>
+              <div class="outcoming-item-remove">
+                <button class="btn-remove-outcoming-items">선택 삭제</button>
+              </div>
+            </div>
+            <div class="outcoming-basket-wrapper">
+              판매할 제품을 추가해주세요
+            </div>
+            <div class="outcoming-basket-footer">
+              <div class="outcoming-total-price-wrapper">
+                <div class="outcoming-total-price-label">판매가</div>
+                <input type='text' class="outcoming-total-price-view" value='0'></input>
+              </div>
+              <div class="outcoming-done-wrapper">
+                <div class="client-cash-payment">
+                  <div class="client-cash-payment-label">현금 지불액</div>
+                  <input type='text' class="client-cash-view" placeholder='￦0' value='0'></input>
+                </div>
+                <div class="outcoming-done-btn">
+                  <button class="btn-outcoming-done">판매</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+<!-- p. 31 -->
