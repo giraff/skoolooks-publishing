@@ -459,7 +459,7 @@ img {
 /* 맨 아래 row */
 .product-grid > .test:last-child {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   border-bottom: 1px solid #5e5e5e;
 }
 
@@ -655,7 +655,7 @@ img {
 /* 제품 정보 하단 버튼 */
 .product-register-btn {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .btn-product-register {
@@ -712,7 +712,7 @@ img {
 /* 제품 리스트 - 하단 버튼 */
 .basket-footer {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .basket-footer-btn {
@@ -865,7 +865,7 @@ img {
 
 .incoming-apply-btn {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .incoming-apply-btn > button {
@@ -986,6 +986,15 @@ img {
   font-weight: bold;
 }
 
+.client-info-label::before,
+.product-info-label::before {
+  content: '\f0da';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 18px;
+  padding-right: 10px;
+}
+
 .client-info-form > li {
   display: grid;
   grid-template-columns: 140px 400px;
@@ -1004,7 +1013,7 @@ img {
 
 .client-info-footer {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 10px;
 }
 
@@ -1151,7 +1160,7 @@ img {
 
 .calendar-views {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding-bottom: 10px;
 }
 
@@ -1348,7 +1357,7 @@ img {
 
 .client-register-footer {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .btn-client-register {
@@ -1390,7 +1399,7 @@ img {
 
 .clients-list-footer {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .btn-remove-clients,
