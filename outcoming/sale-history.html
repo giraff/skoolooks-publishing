@@ -134,36 +134,151 @@
         <div class="contents content-outcoming-history">
           <div class="outcoming-history-label">판매 내역</div>
           <div class="outcoming-history-filter">
-            <div class="form-group outcoming-status">
+            <div class="outcoming-status">
               <div class="all-status">전체</div>
               <div class="sale-status">판매</div>
               <div class="exchange-status">교환</div>
               <div class="refund-status">환불</div>
+              <div class="outcoming-date">
+                <div class="outcoming-date-label">기간</div>
+                <input type="date" class="outcoming-start-date" />~
+                <input type="date" class="outcoming-end-date" />
+              </div>
             </div>
-            <div class="form-group outcoming-date">
-              <div class="outcoming-date-label">기간</div>
-              <input type="date" class="outcoming-start-date" />
-              <input type="date" class="outcoming-end-date" />
-            </div>
-            <div class="form-group info-search-wrapper">
+            <div class="info-search-wrapper">
               <input
                 type="text"
                 class="outcoming-info-search"
                 placeholder="영수증ID / 구매자 이름/ 구매자 번호"
               />
+              <div class="search-init-btn">초기화</div>
             </div>
-            <div class="form-group search-init-btn">초기화</div>
           </div>
-          <div class="outcoming-history-grid">판매 상세 리스트</div>
+          <div class="outcoming-history-grid">
+            <li>
+              <div class="outcoming-history-cols col-1">판매/교환/환불</div>
+              <div class="outcoming-history-cols col-2">영수증 ID</div>
+              <div class="outcoming-history-cols col-3">구매자</div>
+              <div class="outcoming-history-cols col-4">전화 번호</div>
+              <div class="outcoming-history-cols col-5">결제 금액</div>
+              <div class="outcoming-history-cols col-6">판매날짜</div>
+              <div class="outcoming-history-cols col-7"></div>
+            </li>
+            <li>
+              <div class="outcoming-history-cols col-1">판매/1품목(1개)</div>
+              <div class="outcoming-history-cols col-2">20210812174003</div>
+              <div class="outcoming-history-cols col-3">서충식</div>
+              <div class="outcoming-history-cols col-4">010-xxxx-xxxx</div>
+              <div class="outcoming-history-cols col-5">50,000</div>
+              <div class="outcoming-history-cols col-6">2021.08.12 17:40:03</div>
+              <div class="outcoming-history-cols col-7">
+                <div class="col-btn col-btn-exchange">교환</div>
+                <div class="col-btn col-btn-refund">환불</div>
+                <div class="col-btn col-btn-resend">영수증 재전송</div>
+              </div>
+            </li>
+            <li>
+              <div class="outcoming-history-cols col-1">환불/1품목(1개)</div>
+              <div class="outcoming-history-cols col-2">20210813153100</div>
+              <div class="outcoming-history-cols col-3">서충식</div>
+              <div class="outcoming-history-cols col-4">010-xxxx-xxxx</div>
+              <div class="outcoming-history-cols col-5">40,000</div>
+              <div class="outcoming-history-cols col-6">2021.08.13 15:31:00</div>
+              <div class="outcoming-history-cols col-7">
+                <div class="col-btn col-btn-resend">영수증 재전송</div>
+              </div>
+            </li>
+            <li>
+              <div class="outcoming-history-cols col-1">판매/1품목(1개)</div>
+              <div class="outcoming-history-cols col-2">20210812174003</div>
+              <div class="outcoming-history-cols col-3">서충식</div>
+              <div class="outcoming-history-cols col-4">010-xxxx-xxxx</div>
+              <div class="outcoming-history-cols col-5">50,000</div>
+              <div class="outcoming-history-cols col-6">2021.08.12 17:40:03</div>
+              <div class="outcoming-history-cols col-7">
+                <div class="col-btn col-btn-exchange">교환</div>
+                <div class="col-btn col-btn-refund">환불</div>
+                <div class="col-btn col-btn-resend">영수증 재전송</div>
+              </div>
+            </li>
+            <li>
+              <div class="outcoming-history-cols col-1">판매/1품목(1개)</div>
+              <div class="outcoming-history-cols col-2">20210813153100</div>
+              <div class="outcoming-history-cols col-3">서충식</div>
+              <div class="outcoming-history-cols col-4">010-xxxx-xxxx</div>
+              <div class="outcoming-history-cols col-5">40,000</div>
+              <div class="outcoming-history-cols col-6">2021.08.13 15:31:00</div>
+              <div class="outcoming-history-cols col-7">
+                <div class="col-btn col-done-exchange">교환됨</div>
+              </div>
+            </li>
+            <li>
+              <div class="outcoming-history-cols col-1">교환/1품목(1개)</div>
+              <div class="outcoming-history-cols col-2">20210813153100</div>
+              <div class="outcoming-history-cols col-3">서충식</div>
+              <div class="outcoming-history-cols col-4">010-xxxx-xxxx</div>
+              <div class="outcoming-history-cols col-5">40,000</div>
+              <div class="outcoming-history-cols col-6">2021.08.13 15:31:00</div>
+              <div class="outcoming-history-cols col-7">
+                <div class="col-btn col-done-refund">환불됨</div>
+              </div>
+            </li>
+          </div>
           <div class="outcoming-detail-wrapper">
-            <div class="outcoming-detail-label">판매 상세 내역</div>
+            <div class="outcoming-detail-title">
+              <div class="outcoming-detail-label">판매 상세 내역</div>
+              <div class="outcoming-side-label side-exchange-label">
+                <span class="strong">교환됨 </span>20210812153030 / 환불 날짜 2021.08.12 15:30:30 / 결재 : 직원 B
+              </div>            
+            </div>
             <div class="outcoming-detail-contents">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
+              <div class="detail-rows detail-row-1">
+                <li>
+                  <div class="detail-row-label">영수증 번호</div>
+                  <div class="detail-row-value">20210812153030</div>
+                </li>
+                <li>
+                  <div class="detail-row-label">결재</div>
+                  <div class="detail-row-value">직원 B</div>
+                </li>
+              </div>
+              <div class="detail-rows detail-row-2">
+                <li>
+                  <div class="detail-row-label">구매자</div>
+                  <div class="detail-row-value">서충식(부)</div>
+                </li>
+                <li>
+                  <div class="detail-row-label">구매일</div>
+                  <div class="detail-row-value">2021.08.12 12:00:10</div>
+                </li>
+                <li>
+                  <div class="detail-row-label">결제 수단</div>
+                  <div class="detail-row-value">카드</div>
+                </li>
+                <li>
+                  <div class="detail-row-label">실제 판매 대상자</div>
+                  <div class="detail-row-value">화수고 / 1학년 / 남자 / 서충식 / 2731</div>
+                </li>
+              </div>
+              <div class="detail-row-3 detail-table">
+                <li>제품명</li>
+                <li>수량</li>
+                <li>가격</li>
+              </div>
+              <div class="detail-row-4 detail-table">
+                <li>고등학교/백신/여름/남/셔츠/M/신상</li>
+                <li>1</li>
+                <li>25,000</li>
+              </div>
+              <div class="detail-row-5 detail-table">
+                <li>고등학교/백신/여름/여/셔츠/M/신상</li>
+                <li>1</li>
+                <li>25,000</li>
+              </div>
+              <div class="detail-rows detail-row-6">
+                <li>품목 2개</li>
+                <li>합계: 50,000</li>
+              </div>
             </div>
             <div class="outcoming-detail-footer show">
               <button class="btn-exchange">교환</button>
@@ -172,28 +287,118 @@
             </div>
           </div>
           <div class="outcoming-detail-wrapper">
-            <div class="outcoming-detail-label">교환 상세 내역</div>
+            <div class="outcoming-detail-title">
+              <div class="outcoming-detail-label">교환 상세 내역</div>
+              <div class="outcoming-side-label side-refund-label">
+                <span class="strong">환불됨 </span>20210813153100 / 환불 날짜 2021.08.13 15:31:00 / 결재 : 직원 B</div>
+            </div>
             <div class="outcoming-detail-contents">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
+              <div class="detail-rows detail-row-1">
+                <li>
+                  <div class="detail-row-label">영수증 번호</div>
+                  <div class="detail-row-value">20210812153030</div>
+                </li>
+                <li>
+                  <div class="detail-row-label">결재</div>
+                  <div class="detail-row-value">직원 B</div>
+                </li>
+              </div>
+              <div class="detail-rows detail-row-2">
+                <li>
+                  <div class="detail-row-label">구매자</div>
+                  <div class="detail-row-value">서충식(부)</div>
+                </li>
+                <li>
+                  <div class="detail-row-label">구매일</div>
+                  <div class="detail-row-value">2021.08.12 12:00:10</div>
+                </li>
+                <li>
+                  <div class="detail-row-label">결제 수단</div>
+                  <div class="detail-row-value">카드</div>
+                </li>
+                <li>
+                  <div class="detail-row-label">실제 판매 대상자</div>
+                  <div class="detail-row-value">화수고 / 1학년 / 남자 / 서충식 / 2731</div>
+                </li>
+              </div>
+              <div class="detail-row-3 detail-table">
+                <li>제품명</li>
+                <li>수량</li>
+                <li>가격</li>
+              </div>
+              <div class="detail-row-4 detail-table">
+                <li>고등학교/백신/여름/남/셔츠/M/신상</li>
+                <li>1</li>
+                <li>25,000</li>
+              </div>
+              <div class="detail-row-5 detail-table">
+                <li>고등학교/백신/여름/여/셔츠/M/신상</li>
+                <li>1</li>
+                <li>25,000</li>
+              </div>
+              <div class="detail-rows detail-row-6">
+                <li>품목 2개</li>
+                <li>합계: 50,000</li>
+              </div>
             </div>
             <div class="outcoming-detail-footer show">
+              <button class="btn-exchange">교환</button>
+              <button class="btn-refund">환불</button>
               <button class="btn-resend">영수증 재전송</button>
             </div>
           </div>
           <div class="outcoming-detail-wrapper">
-            <div class="outcoming-detail-label">환불 상세 내역</div>
+            <div class="outcoming-detail-title">
+              <div class="outcoming-detail-label">환불 상세 내역</div>
+            </div>
             <div class="outcoming-detail-contents">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
+              <div class="detail-rows detail-row-1">
+                <li>
+                  <div class="detail-row-label">영수증 번호</div>
+                  <div class="detail-row-value">20210812153030</div>
+                </li>
+                <li>
+                  <div class="detail-row-label">결재</div>
+                  <div class="detail-row-value">직원 B</div>
+                </li>
+              </div>
+              <div class="detail-rows detail-row-2">
+                <li>
+                  <div class="detail-row-label">구매자</div>
+                  <div class="detail-row-value">서충식(부)</div>
+                </li>
+                <li>
+                  <div class="detail-row-label">구매일</div>
+                  <div class="detail-row-value">2021.08.12 12:00:10</div>
+                </li>
+                <li>
+                  <div class="detail-row-label">결제 수단</div>
+                  <div class="detail-row-value">카드</div>
+                </li>
+                <li>
+                  <div class="detail-row-label">실제 판매 대상자</div>
+                  <div class="detail-row-value">화수고 / 1학년 / 남자 / 서충식 / 2731</div>
+                </li>
+              </div>
+              <div class="detail-row-3 detail-table">
+                <li>제품명</li>
+                <li>수량</li>
+                <li>가격</li>
+              </div>
+              <div class="detail-row-4 detail-table">
+                <li>고등학교/백신/여름/남/셔츠/M/신상</li>
+                <li>1</li>
+                <li>25,000</li>
+              </div>
+              <div class="detail-row-5 detail-table">
+                <li>고등학교/백신/여름/여/셔츠/M/신상</li>
+                <li>1</li>
+                <li>25,000</li>
+              </div>
+              <div class="detail-rows detail-row-6">
+                <li>품목 2개</li>
+                <li>합계: 50,000</li>
+              </div>
             </div>
             <div class="outcoming-detail-footer show">
               <button class="btn-resend">영수증 재전송</button>

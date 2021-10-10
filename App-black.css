@@ -30,6 +30,9 @@ body {
   height: 100%;
 }
 
+.strong {
+  font-weight: 900;
+}
 /* =========================================================================================== */
 /* *****[ SideBar ]***** */
 /* =========================================================================================== */
@@ -588,7 +591,7 @@ img {
 
 /* 제품 등록의 구성 요소 단위 */
 .product-register-elem {
-  padding: 15px 50px 15px 15px;
+  padding: 15px;
 }
 
 /* 제품 등록 - 제품 정보란 (왼쪽)*/
@@ -1145,6 +1148,233 @@ img {
 /* ==================================================================================== */
 /* *************************** 판매 내역 ******************** */
 /* ==================================================================================== */
+.content-outcoming-history {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 16px 24px;
+}
+
+.content-outcoming-history > * {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.outcoming-history-filter {
+  border-top: 1px solid #5e5e5e;
+  border-bottom: 1px solid #5e5e5e;
+  padding: 10px 0;
+}
+
+.outcoming-status {
+  display: flex;
+}
+
+.all-status,
+.sale-status,
+.exchange-status,
+.refund-status {
+    background-color: white;
+    border: 2px solid #e2e2e2;
+    border-radius: 5px;
+    text-align: center;
+    padding: 8px 10px;
+    margin: 3px;
+    color: grey;
+    cursor: pointer;
+    width: 100px;
+}
+
+.outcoming-date {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.outcoming-date > * {
+  margin: 10px;
+}
+
+.outcoming-date > input {
+  /* padding: 8px 10px; */
+  border: 2px solid #cdcdcd;
+  
+}
+
+.info-search-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.search-init-btn {
+  padding-left: 10px;
+}
+.search-init-btn::before {
+  content: '\f0e2';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  padding-right: 5px;
+}
+
+.info-search-wrapper > input {
+  width: 80%;
+  line-height: 20px;
+  padding:8px 10px;
+  border: 2px solid #e2e2e2;
+  border-radius: 3px;
+  margin: 3px;
+  outline: none
+}
+
+/* 판매 리스트 */
+.outcoming-history-grid {
+  display: flex;
+  flex-flow: column wrap;
+  border-top:1px solid #5e5e5e;
+  border-bottom: 1px solid #5e5e5e;
+}
+
+.outcoming-history-grid > li{
+  display: grid;
+  grid-template-columns: repeat(2, 1.5fr) 1fr 1.5fr 1fr 1.5fr 3fr;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.outcoming-history-grid > li:first-child{
+  padding: 15px 0px;
+}
+
+
+.outcoming-history-grid > li:not(:first-child){
+  font-size: 14px;
+}
+
+.outcoming-history-grid > li:not(:last-child){
+  border-bottom:1px solid #cdcdcd;
+}
+
+/* 멘 마지막 컬럼 (버튼) 디자인 */
+.col-7 {
+  display: flex;
+  justify-content: center;
+}
+
+.col-7 > * {
+  cursor:pointer;
+  padding: 0px 20px;
+  /* flex-grow: 1; */
+  text-align: center;
+  line-height: 30px;
+  border: 2px solid #cdcdcd;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+.col-done-exchange {
+  background-color: #fabe70;
+  width: 150px;
+}
+
+.col-done-refund {
+  background-color:rgb(184, 224, 241) ;
+  width: 150px;
+}
+
+/* 판매 상세 내역 */
+.outcoming-detail-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.outcoming-detail-label {
+  font-size: 18px;
+  font-weight: 900;
+  padding-right: 10px;
+}
+
+.outcoming-side-label {
+  border-radius: 3px;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.side-exchange-label {
+  background-color: #fabe70;
+}
+
+.side-refund-label {
+  background-color: rgb(184, 224, 241);
+}
+.outcoming-detail-contents {
+  border-top: 2px solid #5e5e5e;
+  border-bottom: 2px solid #5e5e5e;
+}
+
+
+.outcoming-detail-contents > div{
+  border-bottom: 1px solid #cdcdcd;
+  padding: 10px;
+
+}
+
+.detail-rows {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.detail-table {
+  display: grid;
+  grid-template-columns: 6fr 2fr 3fr;
+}
+
+.detail-table:first-child {
+  border-top: 1px solid #5e5e5e;
+}
+
+.detail-rows > li{
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.detail-row-label {
+  font-weight: 900;
+  padding-right: 5px;
+}
+
+.detail-row-value {
+  font-size: 14px;
+}
+
+.detail-row-3 {
+  font-weight: 900;
+}
+
+.detail-row-4,
+.detail-row-5 {
+  font-size: 14px;
+}
+
+.detail-row-6 {
+  justify-content: space-between;
+  font-weight: 900;
+}
+
+.outcoming-detail-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+}
+
+.outcoming-detail-footer > button {
+  background-color: #fafafa;
+  padding: 6px 30px;
+  margin-left: 5px;
+  border: 2px solid #cdcdcd;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
 /* ==================================================================================== */
 /* *************************** 판매현황 ******************** */
@@ -1153,15 +1383,38 @@ img {
   display: flex;
   flex-flow: column wrap;
 }
-.content-members {
+
+.outcoming-calendar-header {
   display: flex;
-  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.calendar-date-title {
+  font-size: 30px;
+  font-weight: 900;
+  padding: 0px 30px;
+}
+.calendar-date-title::before{
+  content: '\f0d9';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 30px;
+  padding-right: 30px;
+}
+
+.calendar-date-title::after {
+  content: '\f0da';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 30px;
+  padding-left: 30px;
 }
 
 .calendar-views {
   display: flex;
   justify-content: flex-end;
-  padding-bottom: 10px;
 }
 
 .btn-revenue,
@@ -1181,7 +1434,7 @@ img {
 
 .outcoming-calendar {
   min-height: 600px;
-  background-color: #fafafa;
+  background-color: #eaeaea;
 }
 
 .revenue-result-view,
@@ -1200,7 +1453,11 @@ img {
 .select-day-header {
   font-size: 24px;
   font-weight: 900;
-  margin: 5px;
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-top: 2px solid #eaeaea;
+  border-bottom: 2px solid #eaeaea;
 }
 
 .select-day-content {
@@ -1234,6 +1491,11 @@ img {
 /* *************************** Member ******************** */
 /* ==================================================================================== */
 
+
+.content-members {
+  display: flex;
+  flex-flow: column wrap;
+}
 /* 멤버 관리 페이지 상단 */
 .members-header {
   display: flex;
@@ -1300,6 +1562,155 @@ img {
 /* ==================================================================================== */
 /* *************************** Client List (판매 대상 목록) ******************** */
 /* ==================================================================================== */
+.clients-list-filter {
+  border-top: 1px solid #5e5e5e;
+  border-bottom: 1px solid #5e5e5e;
+  padding: 10px 0;
+}
+
+.clients-school-status{
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.all-status,
+.middleschool-status,
+.highschool-status{
+    background-color: white;
+    border: 2px solid #e2e2e2;
+    border-radius: 5px;
+    text-align: center;
+    padding: 8px 10px;
+    margin: 3px;
+    color: grey;
+    cursor: pointer;
+    width: 100px;
+}
+
+.group-buying-status,
+.group-buying-client{
+  margin-left: 10px;
+}
+
+.group-buying-status > button,
+.group-buying-client > button {
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+.info-search {
+  display: flex;
+  align-items: center;
+}
+
+.search-init-btn {
+  padding-left: 10px;
+}
+.search-init-btn::before {
+  content: '\f0e2';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  padding-right: 5px;
+}
+
+.info-search  > input {
+  width: 80%;
+  line-height: 20px;
+  padding:8px 10px;
+  border: 2px solid #e2e2e2;
+  border-radius: 3px;
+  margin: 3px;
+  outline: none
+}
+
+.clients-grid-wrapper {
+  margin: 10px 0;
+}
+
+.clients-grid {
+  border-top: 1px solid #5e5e5e;
+  border-bottom: 1px solid #5e5e5e;
+}
+
+.clients-grid > li{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 900;
+  color: #5e5e5e
+}
+
+
+.clients-grid > li:not(:nth-child(5)){
+  padding: 20px 10px;;
+}
+
+.clients-grid-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+.btn-load-clients,
+.btn-register-clients,
+.btn-delete-clients {
+  border: 1px solid #cdcdcd;
+  background-color: #fff;
+  padding: 6px 30px;
+  cursor: pointer;
+  margin: 3px;
+}
+
+/* 판매 대상 상세 내역 */
+.client-detail-wrapper {
+  border: 1px solid #cdcdcd;
+  border-radius: 5px;
+  padding-bottom: 10px;
+}
+
+.client-detail-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #cdcdcd;
+  padding: 15px;
+}
+
+.client-detail-header> .client-detail-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.client-detail-header > .client-detail-close-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* 제품 상세 정보 -> 제품 상세 contents */
+.client-detail-contents {
+  display: inline;
+  text-align: left;
+}
+
+.client-detail-contents > li {
+  display: inline-flex;
+  width: 100%;
+  padding: 10px 20px;
+}
+/* 제품 상세 contents의 label */
+.client-detail-label,
+.group-buying-client-label,
+.group-buying-status-label {
+  color: #5a5a5a;
+  font-size: 15px;
+}
+
+
+
 
 /* ==================================================================================== */
 /* ***************************  Client Register ******************** */

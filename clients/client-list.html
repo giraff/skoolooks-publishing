@@ -133,45 +133,80 @@
         <div class="contents content-clients-list">
           <div class="clients-list-label">판매 대상 필터</div>
           <div class="clients-list-filter">
-            <div class="form-group clients-school-status">
+            <div class="clients-school-status">
               <div class="all-status">전체</div>
               <div class="middleschool-status">중학교</div>
               <div class="highschool-status">고등학교</div>
+              <div class="form-group group-buying-status">
+                <button                   
+                  type="button"
+                  data-toggle="dropdown"
+                  aria-expanded="false"
+                  class="btn dropdown-toggle">
+                  공동 구매 여부
+                </button>
+              </div>
+              <div class="form-group group-buying-client">
+                <button                   
+                  type="button"
+                  data-toggle="dropdown"
+                  aria-expanded="false"
+                  class="btn dropdown-toggle">
+                  공동 구매 대상
+                </button>
+              </div>
             </div>
-            <div class="form-group group-buying-status">
-              <button type="text">공동 구매 여부</button>
-            </div>
-            <div class="form-group group-buying-client">
-              <button type="text">공동 구매 대상</button>
-            </div>
-            <div class="form-group info-search">
+            <div class="info-search">
               <input
                 type="text"
                 class="clients-info-search"
-                value="판매 대상 학교/ 판매 대상 이름 / 판매 대상 연락처"
+                placeholder="판매 대상 학교 / 판매 대상 이름/ 판매 대상 연락처"
               />
-            </div>
-            <div class="form-group client-search-init">
-              <div class="search-init">초기화</div>
+              <div class="search-init-btn">초기화</div>
             </div>
           </div>
           <div class="clients-grid-wrapper">
-            <div class="clients-grid">판매 대상을 검색해주세요</div>
+            <div class="clients-grid">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li>판매 대상을 검색해주세요</li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </div>
             <div class="clients-grid-footer">
               <button class="btn-load-clients">불러오기</button>
               <button class="btn-register-clients">등록</button>
               <button class="btn-delete-clients">삭제</button>
             </div>
           </div>
-          <div class="clients-detail-wrapper">
-            <div class="client-detail-label">판매 대상 상세 내역</div>
-            <div class="client-detail-grid">
+          <div class="client-detail-wrapper">
+            <div class="client-detail-header">
+              <div class="client-detail-title">판매 대상 상세 내역</div>
+              <button class="client-detail-close-btn">X</button>
+            </div>
+            <div class="fixed-item">
+              <div class="client-info-value">백석 고등학교 / 오징어/ 010-8888-8888/여</div>
+            </div>
+            <div class="client-detail-contents">
               <li>
-                <div>백석 고등학교 / 오징어/ 010-8888-8888/여</div>
+                <div class="group-buying-client-label">
+                  공동 구매 대상
+                </div>
+                <div class="group-buying-client-value">
+                  ㅇ
+                </div>
               </li>
               <li>
-                <div>공동 구매 대상 : ㅇ</div>
-                <div>공동 구매 여부 : ㅇ</div>
+                <div class="group-buying-status-label">
+                  공동 구매 여부
+                </div>
+                <div class="group-buying-status-value">
+                  ㅇ
+                </div>
               </li>
             </div>
           </div>
