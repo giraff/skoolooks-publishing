@@ -343,7 +343,7 @@ img {
   transform: translate3d(0px, 42px, 0px);
   top: 0px;
   left: 0px;
-  z-index: 1000;
+  z-index: 10;
   float: left;
   min-width: 10rem;
   padding: 0.5rem 0;
@@ -351,7 +351,6 @@ img {
   font-size: 16px;
   letter-spacing: -0.009em;
   line-height: 1.6;
-  z-index: 1000;
   text-align: left;
   list-style: none;
   background-color: #fff;
@@ -438,51 +437,50 @@ img {
 /* product-grid */
 .product-grid {
   border-top: 1px solid #5e5e5e;
-  font-size: 13px;
+  border-bottom: 1px solid #5e5e5e;
 }
 
 /* grid의 row */
 .product-grid > .test {
-  display: flex;
+  display: grid;
+  grid-template-columns: 80px repeat(9, 1fr);
   align-items: center;
-}
-
-/* 맨 아래 row 빼고 모든 row */
-.product-grid > .test:not(:last-child) {
-  display: flex;
-  justify-content: left;
-  border-bottom: 1px solid #eee;
+  padding: 10px 0px;
 }
 
 /* 맨 위 row */
 .product-grid > .test:first-child {
-  padding: 10px 0;
+  padding: 15px 0px;
+  font-weight: 900;
+  color: #5e5e5e;
+}
+
+/* 맨 아래 row 빼고 모든 row */
+.product-grid > .test:not(:last-child) {
+  border-bottom: 1px solid #eee;
 }
 
 /* 맨 아래 row */
 .product-grid > .test:last-child {
   display: flex;
   justify-content: flex-end;
-  border-bottom: 1px solid #5e5e5e;
 }
 
 /* grid의 col */
 .product-grid > .test > * {
-  width: 140px;
-  padding-left: 50px;
+  padding-left: 10px;
 }
 
 /* 맨 처음 column */
-.product-grid > .test > input {
-  width: 50px;
+.product-grid > .test > *:first-child {
+  display: flex;
+  justify-content: center;
 }
 
 /* 맨 마지막 column */
 .product-grid > .test > *:last-child {
   padding: 6px;
-  width: 140px;
   line-height: 20px;
-  margin: 5px 5px 5px 50px;
 }
 
 /* 제품 등록 GRID '수정 버튼' */
@@ -585,8 +583,8 @@ img {
 /* =========[Project Register] */
 /* ============================================================================================ */
 .content-product-register {
+  width: calc(100% - 40px);
   display: flex;
-  flex-flow: row wrap;
 }
 
 /* 제품 등록의 구성 요소 단위 */
@@ -596,11 +594,14 @@ img {
 
 /* 제품 등록 - 제품 정보란 (왼쪽)*/
 .product-register-left {
-  flex-grow: 1;
+  width: 95%;
+  padding-right: 5%;
+  /* max-width: 800px; */
 }
 
 /* 제품 등록 - 제품 리스트란 (오른쪽) */
 .product-register-right {
+  width: 100%;
 }
 
 /* 제품 등록 : 헤더 - 타이틀 + 초기화 버튼 */
@@ -650,6 +651,7 @@ img {
 
 .register-input > input {
   width: 100%;
+  max-width: 800px;
   line-height: 29px;
   border: 1px solid #cdcdcd;
   cursor: pointer;
@@ -691,12 +693,12 @@ img {
 .basket-list {
   border-top: 1px solid #5e5e5e;
   font-size: 14px;
-  width: fit-content;
+  min-width: fit-content;
 }
 
 .basket-list > .test {
   display: grid;
-  grid-template-columns: repeat(9, 80px);
+  grid-template-columns: repeat(9, 1fr);
   padding: 10px 0;
   border-bottom: 1px solid #cdcdcd;
 }
@@ -746,17 +748,40 @@ img {
   margin-top: 10px;
 }
 
+/* grid의 row */
 .product-grid-for-incoming {
   border-top: 1px solid #5e5e5e;
+  border-bottom: 1px solid #5e5e5e;
 }
 
 .product-grid-for-incoming > .test {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  align-items: center;
   border-bottom: 1px solid #eee;
-  padding: 10px 10px;
+  padding: 10px 0px;
 }
 
-.product-grid-for-incoming > .test:last-child {
-  border-bottom: 1px solid #5e5e5e;
+.product-grid-for-incoming > .test:first-child {
+  padding: 15px 0px;
+  font-weight: 900;
+  color: #5e5e5e;
+}
+
+/* 맨 아래 row 빼고 모든 row */
+.product-grid-for-incoming > .test:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+/* grid의 col */
+.product-grid-for-incoming > .test > * {
+  padding-left: 10px;
+}
+
+/* 맨 마지막 column */
+.product-grid-for-incoming > .test > *:last-child {
+  padding: 6px;
+  line-height: 20px;
 }
 
 /* 입고 상세 내역 */
@@ -833,7 +858,7 @@ img {
 }
 
 .incoming-basket > #second-li > input {
-  width: 180px;
+  width: 60%;
 }
 .incoming-basket > #second-li {
   font-size: 13px;
@@ -893,8 +918,8 @@ img {
 }
 
 .incoming-filter-form {
-  border-top: 1px solid #cdcdcd;
-  border-bottom: 1px solid #cdcdcd;
+  border-top: 1px solid #5e5e5e;
+  border-bottom: 1px solid #5e5e5e;
   padding: 10px 0;
 }
 
@@ -903,8 +928,9 @@ img {
 }
 
 .fix-text {
-  width: 30px;
+  width: 40px;
   font-size: 14px;
+  margin: 3px;
 }
 
 .form-incoming-date > input {
@@ -917,37 +943,28 @@ img {
 /* 입고 상세 내역 > 입고 그리드 */
 
 .incoming-grid {
-  border-top: 1px solid #cdcdcd;
-  border-bottom: 1px solid #cdcdcd;
-  font-size: 13px;
+  border-top: 1px solid #5e5e5e;
+  border-bottom: 1px solid #5e5e5e;
 }
 
-.incoming-grid > li {
-  padding: 12px 3px;
-  display: flex;
+.incoming-grid > .test {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr) 2fr 1fr;
   align-items: center;
-  text-align: left;
+  padding: 10px 0px;
+  font-size: 16px;
 }
 
-.incoming-grid > li > .school-name,
-.incoming-grid > li > .incoming-date {
-  width: 250px;
+/* 맨 위 row */
+.incoming-grid > .test:first-child {
+  padding: 15px 0px;
+  font-weight: 900;
+  color: #5e5e5e;
 }
 
-.incoming-grid > li > .season,
-.incoming-grid > li > .sex,
-.incoming-grid > li > .category,
-.incoming-grid > li > .size {
-  width: 100px;
-}
-
-.incoming-grid > li > .status,
-.incoming-grid > li > .incoming-amount {
-  width: 140px;
-}
-
-.incoming-grid > li > .incoming-reason {
-  width: 200px;
+/* 맨 아래 row 빼고 모든 row */
+.incoming-grid > .test:not(:last-child) {
+  border-bottom: 1px solid #eee;
 }
 
 /* ==================================================================================== */
@@ -991,8 +1008,8 @@ img {
 
 .client-info-label::before,
 .product-info-label::before {
-  content: '\f0da';
-  font-family: 'Font Awesome 5 Free';
+  content: "\f0da";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   font-size: 18px;
   padding-right: 10px;
@@ -1173,15 +1190,15 @@ img {
 .sale-status,
 .exchange-status,
 .refund-status {
-    background-color: white;
-    border: 2px solid #e2e2e2;
-    border-radius: 5px;
-    text-align: center;
-    padding: 8px 10px;
-    margin: 3px;
-    color: grey;
-    cursor: pointer;
-    width: 100px;
+  background-color: white;
+  border: 2px solid #e2e2e2;
+  border-radius: 5px;
+  text-align: center;
+  padding: 8px 10px;
+  margin: 3px;
+  color: grey;
+  cursor: pointer;
+  width: 100px;
 }
 
 .outcoming-date {
@@ -1197,7 +1214,6 @@ img {
 .outcoming-date > input {
   /* padding: 8px 10px; */
   border: 2px solid #cdcdcd;
-  
 }
 
 .info-search-wrapper {
@@ -1209,8 +1225,8 @@ img {
   padding-left: 10px;
 }
 .search-init-btn::before {
-  content: '\f0e2';
-  font-family: 'Font Awesome 5 Free';
+  content: "\f0e2";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   padding-right: 5px;
 }
@@ -1218,39 +1234,38 @@ img {
 .info-search-wrapper > input {
   width: 80%;
   line-height: 20px;
-  padding:8px 10px;
+  padding: 8px 10px;
   border: 2px solid #e2e2e2;
   border-radius: 3px;
   margin: 3px;
-  outline: none
+  outline: none;
 }
 
 /* 판매 리스트 */
 .outcoming-history-grid {
   display: flex;
   flex-flow: column wrap;
-  border-top:1px solid #5e5e5e;
+  border-top: 1px solid #5e5e5e;
   border-bottom: 1px solid #5e5e5e;
 }
 
-.outcoming-history-grid > li{
+.outcoming-history-grid > li {
   display: grid;
   grid-template-columns: repeat(2, 1.5fr) 1fr 1.5fr 1fr 1.5fr 3fr;
   align-items: center;
   padding: 10px 0;
 }
 
-.outcoming-history-grid > li:first-child{
+.outcoming-history-grid > li:first-child {
   padding: 15px 0px;
 }
 
-
-.outcoming-history-grid > li:not(:first-child){
+.outcoming-history-grid > li:not(:first-child) {
   font-size: 14px;
 }
 
-.outcoming-history-grid > li:not(:last-child){
-  border-bottom:1px solid #cdcdcd;
+.outcoming-history-grid > li:not(:last-child) {
+  border-bottom: 1px solid #cdcdcd;
 }
 
 /* 멘 마지막 컬럼 (버튼) 디자인 */
@@ -1260,7 +1275,7 @@ img {
 }
 
 .col-7 > * {
-  cursor:pointer;
+  cursor: pointer;
   padding: 0px 20px;
   /* flex-grow: 1; */
   text-align: center;
@@ -1276,7 +1291,7 @@ img {
 }
 
 .col-done-refund {
-  background-color:rgb(184, 224, 241) ;
+  background-color: rgb(184, 224, 241);
   width: 150px;
 }
 
@@ -1311,11 +1326,9 @@ img {
   border-bottom: 2px solid #5e5e5e;
 }
 
-
-.outcoming-detail-contents > div{
+.outcoming-detail-contents > div {
   border-bottom: 1px solid #cdcdcd;
   padding: 10px;
-
 }
 
 .detail-rows {
@@ -1332,7 +1345,7 @@ img {
   border-top: 1px solid #5e5e5e;
 }
 
-.detail-rows > li{
+.detail-rows > li {
   display: flex;
   align-items: center;
   padding-right: 20px;
@@ -1396,17 +1409,17 @@ img {
   font-weight: 900;
   padding: 0px 30px;
 }
-.calendar-date-title::before{
-  content: '\f0d9';
-  font-family: 'Font Awesome 5 Free';
+.calendar-date-title::before {
+  content: "\f0d9";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   font-size: 30px;
   padding-right: 30px;
 }
 
 .calendar-date-title::after {
-  content: '\f0da';
-  font-family: 'Font Awesome 5 Free';
+  content: "\f0da";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   font-size: 30px;
   padding-left: 30px;
@@ -1491,7 +1504,6 @@ img {
 /* *************************** Member ******************** */
 /* ==================================================================================== */
 
-
 .content-members {
   display: flex;
   flex-flow: column wrap;
@@ -1568,27 +1580,27 @@ img {
   padding: 10px 0;
 }
 
-.clients-school-status{
+.clients-school-status {
   display: flex;
   margin-bottom: 5px;
 }
 
 .all-status,
 .middleschool-status,
-.highschool-status{
-    background-color: white;
-    border: 2px solid #e2e2e2;
-    border-radius: 5px;
-    text-align: center;
-    padding: 8px 10px;
-    margin: 3px;
-    color: grey;
-    cursor: pointer;
-    width: 100px;
+.highschool-status {
+  background-color: white;
+  border: 2px solid #e2e2e2;
+  border-radius: 5px;
+  text-align: center;
+  padding: 8px 10px;
+  margin: 3px;
+  color: grey;
+  cursor: pointer;
+  width: 100px;
 }
 
 .group-buying-status,
-.group-buying-client{
+.group-buying-client {
   margin-left: 10px;
 }
 
@@ -1607,20 +1619,20 @@ img {
   padding-left: 10px;
 }
 .search-init-btn::before {
-  content: '\f0e2';
-  font-family: 'Font Awesome 5 Free';
+  content: "\f0e2";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   padding-right: 5px;
 }
 
-.info-search  > input {
+.info-search > input {
   width: 80%;
   line-height: 20px;
-  padding:8px 10px;
+  padding: 8px 10px;
   border: 2px solid #e2e2e2;
   border-radius: 3px;
   margin: 3px;
-  outline: none
+  outline: none;
 }
 
 .clients-grid-wrapper {
@@ -1632,7 +1644,7 @@ img {
   border-bottom: 1px solid #5e5e5e;
 }
 
-.clients-grid > li{
+.clients-grid > li {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1641,12 +1653,11 @@ img {
   padding: 12px;
   font-size: 14px;
   font-weight: 900;
-  color: #5e5e5e
+  color: #5e5e5e;
 }
 
-
-.clients-grid > li:not(:nth-child(5)){
-  padding: 20px 10px;;
+.clients-grid > li:not(:nth-child(5)) {
+  padding: 20px 10px;
 }
 
 .clients-grid-footer {
@@ -1679,7 +1690,7 @@ img {
   padding: 15px;
 }
 
-.client-detail-header> .client-detail-title {
+.client-detail-header > .client-detail-title {
   font-size: 18px;
   font-weight: 700;
 }
@@ -1709,28 +1720,29 @@ img {
   font-size: 15px;
 }
 
-
-
-
 /* ==================================================================================== */
 /* ***************************  Client Register ******************** */
 /* ==================================================================================== */
 
 .content-client-register {
+  width: calc(100% - 40px);
   display: flex;
-  flex-flow: row wrap;
 }
 
 .content-client-register > * {
-  padding: 15px 50px 15px 15px;
-}
-.client-register-form {
-  flex-grow: 1;
+  padding: 15px;
 }
 
-.client-list {
-  flex-grow: 2;
+.client-register-form {
+  width: 95%;
+  padding-right: 5%;
+  /* max-width: 800px; */
 }
+
+.clients-list {
+  width: 100%;
+}
+
 .client-register-header,
 .client-register-li {
   display: flex;
@@ -1792,7 +1804,6 @@ img {
   border-top: 1px solid #5e5e5e;
   border-bottom: 1px solid #5e5e5e;
   font-size: 14px;
-  width: 800px;
   height: 500px;
 
   /* 임시 */
@@ -1825,4 +1836,108 @@ img {
 .btn-remove-clients + .btn-register-client {
   margin-left: 10px;
   cursor: pointer;
+}
+
+/* =========================================================== */
+/* ======================      팝업     ========================= */
+/* =========================================================== */
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(10, 10, 10, 0.6); */
+  z-index: 100;
+  overflow-y: hidden;
+}
+
+.popup-hide {
+  display: none;
+}
+
+.popup.has-filter {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.popup-wrapper {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #cdcdcd;
+  padding: 10px;
+  font-weight: 900;
+}
+
+.popup-contents {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.popup-contents > .popup-upload-label {
+  margin-right: 10px;
+  color: #5e5e5e;
+  font-weight: 900;
+}
+
+.popup-file-input > input {
+  outline: none;
+  border: 2px solid #e2e2e2;
+  padding: 5px 10px;
+  color: #aaaaaa;
+  font-weight: 700;
+  width: 300px;
+}
+
+.popup-contents > .btn-upload-file {
+  border: 2px solid #e2e2e2;
+  background-color: #fff;
+  padding: 5.5px 10px;
+  font-size: 13px;
+  margin-top: 1px;
+}
+
+.popup-contents > .warning-text {
+  position: absolute;
+  bottom: 3px;
+  left: 100px;
+  font-size: 13px;
+  color: rgb(64, 110, 209);
+}
+
+.popup-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0px 10px;
+  margin-top: 20px;
+}
+
+.btn-popup-cancel,
+.btn-popup-ok {
+  border: 2px solid #e2e2e2;
+  background-color: #fff;
+  padding: 5px 10px;
+  width: 100px;
+  margin: 10px 3px;
+  cursor: pointer;
+}
+
+/* 반응형 웹 */
+@media all and (max-width: 1700px) {
+  .content-product-register,
+  .content-client-register {
+    flex-flow: column wrap;
+  }
 }

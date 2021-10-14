@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>멤버 관리</title>
+    <title>판매 대상 목록</title>
     <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
     <script>
       WebFont.load({
@@ -93,9 +93,14 @@
                 </ul>
               </li>
               <li class="sidebar-nav">
-                <div class="menu-label clicked">
+                <div class="menu-label">
                   <i class="fas fa-user-tie"></i>
-                  <a href="#" class="btn-nav btn-nav-employee"> 멤버 관리 </a>
+                  <a
+                    href="../member/member.html"
+                    class="btn-nav btn-nav-employee"
+                  >
+                    멤버 관리
+                  </a>
                 </div>
               </li>
               <li class="sidebar-nav has-dropdown">
@@ -106,7 +111,7 @@
                   </a>
                 </div>
                 <ul class="sidebar-submenu sub-hidden">
-                  <li class="">
+                  <li class="clicked">
                     <a href="../clients/client-list.html">판매 대상 목록</a>
                   </li>
                   <li class="">
@@ -121,33 +126,113 @@
       </aside>
       <section id="section-container">
         <div class="page-header">
-          <h1 class="page-title">멤버 관리</h1>
+          <h1 class="page-title">판매 대상 목록</h1>
           <div class="page-description">
-            재고 관리를 같이 할 직원을 등록할 수 있습니다
+            매장을 이용하신 고객분들의 정보를 조회하고 관리합니다
           </div>
         </div>
 
-        <div class="contents content-members">
-          <div class="members-header">
-            <div class="active-members">3 active members</div>
-            <div class="members-management-group">
-              <button class="btn-remove-members">삭제</button>
-              <button class="btn-register-member">등록</button>
+        <div class="contents content-clients-list">
+          <div class="clients-list-label">판매 대상 필터</div>
+          <div class="clients-list-filter">
+            <div class="clients-school-status">
+              <div class="all-status">전체</div>
+              <div class="middleschool-status">중학교</div>
+              <div class="highschool-status">고등학교</div>
+              <div class="form-group group-buying-status">
+                <button
+                  type="button"
+                  data-toggle="dropdown"
+                  aria-expanded="false"
+                  class="btn dropdown-toggle"
+                >
+                  공동 구매 여부
+                </button>
+              </div>
+              <div class="form-group group-buying-client">
+                <button
+                  type="button"
+                  data-toggle="dropdown"
+                  aria-expanded="false"
+                  class="btn dropdown-toggle"
+                >
+                  공동 구매 대상
+                </button>
+              </div>
+            </div>
+            <div class="info-search">
+              <input
+                type="text"
+                class="clients-info-search"
+                placeholder="판매 대상 학교 / 판매 대상 이름/ 판매 대상 연락처"
+              />
+              <div class="search-init-btn">초기화</div>
             </div>
           </div>
-          <div class="members-section">
-            <div class="members-grid-wrapper">
-              <div class="members-grid-label">멤버 목록</div>
-              <div class="members-grid"></div>
+          <div class="clients-grid-wrapper">
+            <div class="clients-grid">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li>판매 대상을 검색해주세요</li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
             </div>
-            <div class="members-view-wrapper">
-              <div class="members-view-label">멤버 상세 정보</div>
-              <div class="members-view">멤버를 선택하세요</div>
+            <div class="clients-grid-footer">
+              <a href="../popup/upload-file-popup.html">
+                <button class="btn-load-clients">불러오기</button>
+              </a>
+              <button class="btn-register-clients">등록</button>
+              <button class="btn-delete-clients">삭제</button>
+            </div>
+          </div>
+          <div class="client-detail-wrapper">
+            <div class="client-detail-header">
+              <div class="client-detail-title">판매 대상 상세 내역</div>
+              <button class="client-detail-close-btn">X</button>
+            </div>
+            <div class="fixed-item">
+              <div class="client-info-value">
+                백석 고등학교 / 오징어/ 010-8888-8888/여
+              </div>
+            </div>
+            <div class="client-detail-contents">
+              <li>
+                <div class="group-buying-client-label">공동 구매 대상</div>
+                <div class="group-buying-client-value">ㅇ</div>
+              </li>
+              <li>
+                <div class="group-buying-status-label">공동 구매 여부</div>
+                <div class="group-buying-status-value">ㅇ</div>
+              </li>
             </div>
           </div>
         </div>
       </section>
     </div>
+
+    <div class="popup popup-show">
+      <div class="popup-wrapper">
+        <div class="popup-header">
+          <div class="popup-title">불러오기</div>
+          <div class="popup-close-btn">x</div>
+        </div>
+        <div class="popup-contents">
+          <div class="popup-upload-label">파일 이름</div>
+          <div class="popup-file-input">
+            <input type="text" readonly value="C:/project/YHH/mama.xlsx" />
+          </div>
+          <button type="button" class="btn-upload-file">불러오기</button>
+          <div class="warning-text">엑셀(.xlsx) 파일만 가능합니다.</div>
+        </div>
+        <div class="popup-footer">
+          <button type="button" class="btn-popup-cancel">취소</button>
+          <button type="button" class="btn-popup-ok">확인</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
-<!-- p.76 -->
